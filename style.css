@@ -1,0 +1,1089 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: #d9fcff;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+#scene {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.grass {
+  background: linear-gradient(#5f9121, #3F4F32);
+  border-radius: 50%;
+  width: 1000px;
+  height: 1000px;
+  position: absolute;
+}
+.grass.grass-1 {
+  top: 50%;
+  left: -200px;
+  transform: scale(0.9);
+}
+.grass.grass-2 {
+  top: 47%;
+  left: 500px;
+}
+
+.cloud {
+  position: absolute;
+}
+.cloud.cloud-1 {
+  left: 10%;
+  top: 50px;
+}
+.cloud.cloud-2 {
+  left: 60%;
+  top: 70px;
+  transform: scale(-1.2, 1.2);
+}
+.cloud.cloud-3 {
+  left: 80%;
+  top: 50px;
+  transform: scale(0.7);
+}
+.cloud .c {
+  position: absolute;
+  background-color: #fff;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.cloud .c:nth-child(1) {
+  left: 35px;
+  top: -25px;
+}
+.cloud .c:nth-child(2) {
+  left: 25px;
+  top: 25px;
+}
+.cloud .c:nth-child(3) {
+  left: -52px;
+  top: 25px;
+}
+.cloud .c:nth-child(4) {
+  left: 75px;
+  top: 25px;
+}
+.cloud .c:nth-child(5) {
+  left: -25px;
+  top: -10px;
+}
+
+.butterfly {
+  position: absolute;
+  top: 130%;
+  will-change: top, left;
+}
+.butterfly::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 90px;
+  border-radius: 50%;
+  position: absolute;
+  left: -60px;
+  transform: skewX(30deg);
+  transform-origin: 50% 50%;
+  animation: flapWingLeft 400ms ease-out infinite alternate;
+  will-change: transform;
+}
+.butterfly::before {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 90px;
+  border-radius: 50%;
+  position: absolute;
+  transform: skewX(-30deg);
+  transform-origin: 0% 50%;
+  animation: flapWingRight 300ms ease-out infinite alternate;
+  will-change: transform;
+}
+
+.butterfly:nth-child(1) {
+  left: calc(50% - 90px);
+  animation: 3000ms linear 10247ms scaleUp infinite forwards, 3000ms linear 10247ms flyUp-1 infinite forwards;
+}
+.butterfly:nth-child(1)::after {
+  background-color: #0154a4;
+  animation-delay: 360ms;
+}
+.butterfly:nth-child(1)::before {
+  background-color: #c4d72d;
+  animation-delay: 360ms;
+}
+
+.butterfly:nth-child(2) {
+  left: calc(50% - 51px);
+  animation: 3000ms linear 3715ms scaleUp infinite forwards, 3000ms linear 3715ms flyUp-2 infinite forwards;
+}
+.butterfly:nth-child(2)::after {
+  background-color: #19c1f2;
+  animation-delay: 953ms;
+}
+.butterfly:nth-child(2)::before {
+  background-color: #19c1f2;
+  animation-delay: 953ms;
+}
+
+.butterfly:nth-child(3) {
+  left: calc(50% - -15px);
+  animation: 3000ms linear 8668ms scaleUp infinite forwards, 3000ms linear 8668ms flyUp-3 infinite forwards;
+}
+.butterfly:nth-child(3)::after {
+  background-color: #ed008c;
+  animation-delay: 654ms;
+}
+.butterfly:nth-child(3)::before {
+  background-color: #f8ee2c;
+  animation-delay: 654ms;
+}
+
+.butterfly:nth-child(4) {
+  left: calc(50% - -13px);
+  animation: 3000ms linear 1098ms scaleUp infinite forwards, 3000ms linear 1098ms flyUp-4 infinite forwards;
+}
+.butterfly:nth-child(4)::after {
+  background-color: #19c1f2;
+  animation-delay: 8ms;
+}
+.butterfly:nth-child(4)::before {
+  background-color: #0154a4;
+  animation-delay: 8ms;
+}
+
+.butterfly:nth-child(5) {
+  left: calc(50% - -91px);
+  animation: 3000ms linear 5778ms scaleUp infinite forwards, 3000ms linear 5778ms flyUp-5 infinite forwards;
+}
+.butterfly:nth-child(5)::after {
+  background-color: #a2238e;
+  animation-delay: 972ms;
+}
+.butterfly:nth-child(5)::before {
+  background-color: #0083cb;
+  animation-delay: 972ms;
+}
+
+.butterfly:nth-child(6) {
+  left: calc(50% - 6px);
+  animation: 3000ms linear 9374ms scaleUp infinite forwards, 3000ms linear 9374ms flyUp-6 infinite forwards;
+}
+.butterfly:nth-child(6)::after {
+  background-color: #a2238e;
+  animation-delay: 806ms;
+}
+.butterfly:nth-child(6)::before {
+  background-color: #a2238e;
+  animation-delay: 806ms;
+}
+
+.butterfly:nth-child(7) {
+  left: calc(50% - -96px);
+  animation: 3000ms linear 10515ms scaleUp infinite forwards, 3000ms linear 10515ms flyUp-7 infinite forwards;
+}
+.butterfly:nth-child(7)::after {
+  background-color: #19c1f2;
+  animation-delay: 345ms;
+}
+.butterfly:nth-child(7)::before {
+  background-color: #4cb848;
+  animation-delay: 345ms;
+}
+
+.butterfly:nth-child(8) {
+  left: calc(50% - 3px);
+  animation: 3000ms linear 502ms scaleUp infinite forwards, 3000ms linear 502ms flyUp-8 infinite forwards;
+}
+.butterfly:nth-child(8)::after {
+  background-color: #a2238e;
+  animation-delay: 696ms;
+}
+.butterfly:nth-child(8)::before {
+  background-color: #c4d72d;
+  animation-delay: 696ms;
+}
+
+.butterfly:nth-child(9) {
+  left: calc(50% - -28px);
+  animation: 3000ms linear 1363ms scaleUp infinite forwards, 3000ms linear 1363ms flyUp-9 infinite forwards;
+}
+.butterfly:nth-child(9)::after {
+  background-color: #c4d72d;
+  animation-delay: 230ms;
+}
+.butterfly:nth-child(9)::before {
+  background-color: #f8ee2c;
+  animation-delay: 230ms;
+}
+
+.butterfly:nth-child(10) {
+  left: calc(50% - -16px);
+  animation: 3000ms linear 357ms scaleUp infinite forwards, 3000ms linear 357ms flyUp-10 infinite forwards;
+}
+.butterfly:nth-child(10)::after {
+  background-color: #19c1f2;
+  animation-delay: 769ms;
+}
+.butterfly:nth-child(10)::before {
+  background-color: #a2238e;
+  animation-delay: 769ms;
+}
+
+.butterfly:nth-child(11) {
+  left: calc(50% - -27px);
+  animation: 3000ms linear 6143ms scaleUp infinite forwards, 3000ms linear 6143ms flyUp-11 infinite forwards;
+}
+.butterfly:nth-child(11)::after {
+  background-color: #4cb848;
+  animation-delay: 248ms;
+}
+.butterfly:nth-child(11)::before {
+  background-color: #f8ee2c;
+  animation-delay: 248ms;
+}
+
+.butterfly:nth-child(12) {
+  left: calc(50% - 37px);
+  animation: 3000ms linear 1550ms scaleUp infinite forwards, 3000ms linear 1550ms flyUp-12 infinite forwards;
+}
+.butterfly:nth-child(12)::after {
+  background-color: #4cb848;
+  animation-delay: 901ms;
+}
+.butterfly:nth-child(12)::before {
+  background-color: #a2238e;
+  animation-delay: 901ms;
+}
+
+.butterfly:nth-child(13) {
+  left: calc(50% - -44px);
+  animation: 3000ms linear 1077ms scaleUp infinite forwards, 3000ms linear 1077ms flyUp-13 infinite forwards;
+}
+.butterfly:nth-child(13)::after {
+  background-color: #0083cb;
+  animation-delay: 177ms;
+}
+.butterfly:nth-child(13)::before {
+  background-color: #19c1f2;
+  animation-delay: 177ms;
+}
+
+.butterfly:nth-child(14) {
+  left: calc(50% - -18px);
+  animation: 3000ms linear 8285ms scaleUp infinite forwards, 3000ms linear 8285ms flyUp-14 infinite forwards;
+}
+.butterfly:nth-child(14)::after {
+  background-color: #c4d72d;
+  animation-delay: 315ms;
+}
+.butterfly:nth-child(14)::before {
+  background-color: #a2238e;
+  animation-delay: 315ms;
+}
+
+.butterfly:nth-child(15) {
+  left: calc(50% - 18px);
+  animation: 3000ms linear 8176ms scaleUp infinite forwards, 3000ms linear 8176ms flyUp-15 infinite forwards;
+}
+.butterfly:nth-child(15)::after {
+  background-color: #4cb848;
+  animation-delay: 473ms;
+}
+.butterfly:nth-child(15)::before {
+  background-color: #ed008c;
+  animation-delay: 473ms;
+}
+
+.butterfly:nth-child(16) {
+  left: calc(50% - -50px);
+  animation: 3000ms linear 10504ms scaleUp infinite forwards, 3000ms linear 10504ms flyUp-16 infinite forwards;
+}
+.butterfly:nth-child(16)::after {
+  background-color: #0083cb;
+  animation-delay: 587ms;
+}
+.butterfly:nth-child(16)::before {
+  background-color: #f9a01e;
+  animation-delay: 587ms;
+}
+
+.butterfly:nth-child(17) {
+  left: calc(50% - 32px);
+  animation: 3000ms linear 1143ms scaleUp infinite forwards, 3000ms linear 1143ms flyUp-17 infinite forwards;
+}
+.butterfly:nth-child(17)::after {
+  background-color: #ed008c;
+  animation-delay: 773ms;
+}
+.butterfly:nth-child(17)::before {
+  background-color: #4cb848;
+  animation-delay: 773ms;
+}
+
+.butterfly:nth-child(18) {
+  left: calc(50% - 42px);
+  animation: 3000ms linear 2654ms scaleUp infinite forwards, 3000ms linear 2654ms flyUp-18 infinite forwards;
+}
+.butterfly:nth-child(18)::after {
+  background-color: #ed008c;
+  animation-delay: 457ms;
+}
+.butterfly:nth-child(18)::before {
+  background-color: #4cb848;
+  animation-delay: 457ms;
+}
+
+.butterfly:nth-child(19) {
+  left: calc(50% - 17px);
+  animation: 3000ms linear 3561ms scaleUp infinite forwards, 3000ms linear 3561ms flyUp-19 infinite forwards;
+}
+.butterfly:nth-child(19)::after {
+  background-color: #0154a4;
+  animation-delay: 771ms;
+}
+.butterfly:nth-child(19)::before {
+  background-color: #ed008c;
+  animation-delay: 771ms;
+}
+
+.butterfly:nth-child(20) {
+  left: calc(50% - -63px);
+  animation: 3000ms linear 8360ms scaleUp infinite forwards, 3000ms linear 8360ms flyUp-20 infinite forwards;
+}
+.butterfly:nth-child(20)::after {
+  background-color: #0154a4;
+  animation-delay: 223ms;
+}
+.butterfly:nth-child(20)::before {
+  background-color: #f8ee2c;
+  animation-delay: 223ms;
+}
+
+.butterfly:nth-child(21) {
+  left: calc(50% - 34px);
+  animation: 3000ms linear 1953ms scaleUp infinite forwards, 3000ms linear 1953ms flyUp-21 infinite forwards;
+}
+.butterfly:nth-child(21)::after {
+  background-color: #4cb848;
+  animation-delay: 431ms;
+}
+.butterfly:nth-child(21)::before {
+  background-color: #a2238e;
+  animation-delay: 431ms;
+}
+
+.butterfly:nth-child(22) {
+  left: calc(50% - -84px);
+  animation: 3000ms linear 6467ms scaleUp infinite forwards, 3000ms linear 6467ms flyUp-22 infinite forwards;
+}
+.butterfly:nth-child(22)::after {
+  background-color: #a2238e;
+  animation-delay: 272ms;
+}
+.butterfly:nth-child(22)::before {
+  background-color: #f9a01e;
+  animation-delay: 272ms;
+}
+
+.butterfly:nth-child(23) {
+  left: calc(50% - -99px);
+  animation: 3000ms linear 10159ms scaleUp infinite forwards, 3000ms linear 10159ms flyUp-23 infinite forwards;
+}
+.butterfly:nth-child(23)::after {
+  background-color: #f8ee2c;
+  animation-delay: 938ms;
+}
+.butterfly:nth-child(23)::before {
+  background-color: #0083cb;
+  animation-delay: 938ms;
+}
+
+.butterfly:nth-child(24) {
+  left: calc(50% - 80px);
+  animation: 3000ms linear 10818ms scaleUp infinite forwards, 3000ms linear 10818ms flyUp-24 infinite forwards;
+}
+.butterfly:nth-child(24)::after {
+  background-color: #0083cb;
+  animation-delay: 756ms;
+}
+.butterfly:nth-child(24)::before {
+  background-color: #0154a4;
+  animation-delay: 756ms;
+}
+
+.butterfly:nth-child(25) {
+  left: calc(50% - 30px);
+  animation: 3000ms linear 371ms scaleUp infinite forwards, 3000ms linear 371ms flyUp-25 infinite forwards;
+}
+.butterfly:nth-child(25)::after {
+  background-color: #0154a4;
+  animation-delay: 604ms;
+}
+.butterfly:nth-child(25)::before {
+  background-color: #0083cb;
+  animation-delay: 604ms;
+}
+
+.butterfly:nth-child(26) {
+  left: calc(50% - 64px);
+  animation: 3000ms linear 8147ms scaleUp infinite forwards, 3000ms linear 8147ms flyUp-26 infinite forwards;
+}
+.butterfly:nth-child(26)::after {
+  background-color: #ed008c;
+  animation-delay: 125ms;
+}
+.butterfly:nth-child(26)::before {
+  background-color: #0083cb;
+  animation-delay: 125ms;
+}
+
+.butterfly:nth-child(27) {
+  left: calc(50% - 17px);
+  animation: 3000ms linear 9180ms scaleUp infinite forwards, 3000ms linear 9180ms flyUp-27 infinite forwards;
+}
+.butterfly:nth-child(27)::after {
+  background-color: #a2238e;
+  animation-delay: 64ms;
+}
+.butterfly:nth-child(27)::before {
+  background-color: #a2238e;
+  animation-delay: 64ms;
+}
+
+.butterfly:nth-child(28) {
+  left: calc(50% - -93px);
+  animation: 3000ms linear 6097ms scaleUp infinite forwards, 3000ms linear 6097ms flyUp-28 infinite forwards;
+}
+.butterfly:nth-child(28)::after {
+  background-color: #a2238e;
+  animation-delay: 806ms;
+}
+.butterfly:nth-child(28)::before {
+  background-color: #f8ee2c;
+  animation-delay: 806ms;
+}
+
+.butterfly:nth-child(29) {
+  left: calc(50% - -2px);
+  animation: 3000ms linear 11415ms scaleUp infinite forwards, 3000ms linear 11415ms flyUp-29 infinite forwards;
+}
+.butterfly:nth-child(29)::after {
+  background-color: #ed008c;
+  animation-delay: 888ms;
+}
+.butterfly:nth-child(29)::before {
+  background-color: #a2238e;
+  animation-delay: 888ms;
+}
+
+.butterfly:nth-child(30) {
+  left: calc(50% - 94px);
+  animation: 3000ms linear 5695ms scaleUp infinite forwards, 3000ms linear 5695ms flyUp-30 infinite forwards;
+}
+.butterfly:nth-child(30)::after {
+  background-color: #0154a4;
+  animation-delay: 569ms;
+}
+.butterfly:nth-child(30)::before {
+  background-color: #0083cb;
+  animation-delay: 569ms;
+}
+
+.butterfly:nth-child(31) {
+  left: calc(50% - -29px);
+  animation: 3000ms linear 11127ms scaleUp infinite forwards, 3000ms linear 11127ms flyUp-31 infinite forwards;
+}
+.butterfly:nth-child(31)::after {
+  background-color: #f9a01e;
+  animation-delay: 222ms;
+}
+.butterfly:nth-child(31)::before {
+  background-color: #f8ee2c;
+  animation-delay: 222ms;
+}
+
+.butterfly:nth-child(32) {
+  left: calc(50% - 17px);
+  animation: 3000ms linear 4927ms scaleUp infinite forwards, 3000ms linear 4927ms flyUp-32 infinite forwards;
+}
+.butterfly:nth-child(32)::after {
+  background-color: #a2238e;
+  animation-delay: 372ms;
+}
+.butterfly:nth-child(32)::before {
+  background-color: #a2238e;
+  animation-delay: 372ms;
+}
+
+.butterfly:nth-child(33) {
+  left: calc(50% - 35px);
+  animation: 3000ms linear 8142ms scaleUp infinite forwards, 3000ms linear 8142ms flyUp-33 infinite forwards;
+}
+.butterfly:nth-child(33)::after {
+  background-color: #0154a4;
+  animation-delay: 891ms;
+}
+.butterfly:nth-child(33)::before {
+  background-color: #0154a4;
+  animation-delay: 891ms;
+}
+
+.butterfly:nth-child(34) {
+  left: calc(50% - 51px);
+  animation: 3000ms linear 8072ms scaleUp infinite forwards, 3000ms linear 8072ms flyUp-34 infinite forwards;
+}
+.butterfly:nth-child(34)::after {
+  background-color: #0154a4;
+  animation-delay: 599ms;
+}
+.butterfly:nth-child(34)::before {
+  background-color: #0083cb;
+  animation-delay: 599ms;
+}
+
+.butterfly:nth-child(35) {
+  left: calc(50% - -31px);
+  animation: 3000ms linear 9699ms scaleUp infinite forwards, 3000ms linear 9699ms flyUp-35 infinite forwards;
+}
+.butterfly:nth-child(35)::after {
+  background-color: #ed008c;
+  animation-delay: 229ms;
+}
+.butterfly:nth-child(35)::before {
+  background-color: #19c1f2;
+  animation-delay: 229ms;
+}
+
+.butterfly:nth-child(36) {
+  left: calc(50% - 88px);
+  animation: 3000ms linear 3930ms scaleUp infinite forwards, 3000ms linear 3930ms flyUp-36 infinite forwards;
+}
+.butterfly:nth-child(36)::after {
+  background-color: #0154a4;
+  animation-delay: 858ms;
+}
+.butterfly:nth-child(36)::before {
+  background-color: #f9a01e;
+  animation-delay: 858ms;
+}
+
+.butterfly:nth-child(37) {
+  left: calc(50% - -19px);
+  animation: 3000ms linear 6028ms scaleUp infinite forwards, 3000ms linear 6028ms flyUp-37 infinite forwards;
+}
+.butterfly:nth-child(37)::after {
+  background-color: #f9a01e;
+  animation-delay: 176ms;
+}
+.butterfly:nth-child(37)::before {
+  background-color: #19c1f2;
+  animation-delay: 176ms;
+}
+
+.butterfly:nth-child(38) {
+  left: calc(50% - -11px);
+  animation: 3000ms linear 5681ms scaleUp infinite forwards, 3000ms linear 5681ms flyUp-38 infinite forwards;
+}
+.butterfly:nth-child(38)::after {
+  background-color: #0083cb;
+  animation-delay: 532ms;
+}
+.butterfly:nth-child(38)::before {
+  background-color: #ed008c;
+  animation-delay: 532ms;
+}
+
+.butterfly:nth-child(39) {
+  left: calc(50% - 25px);
+  animation: 3000ms linear 2128ms scaleUp infinite forwards, 3000ms linear 2128ms flyUp-39 infinite forwards;
+}
+.butterfly:nth-child(39)::after {
+  background-color: #ed008c;
+  animation-delay: 957ms;
+}
+.butterfly:nth-child(39)::before {
+  background-color: #f9a01e;
+  animation-delay: 957ms;
+}
+
+.butterfly:nth-child(40) {
+  left: calc(50% - 10px);
+  animation: 3000ms linear 2666ms scaleUp infinite forwards, 3000ms linear 2666ms flyUp-40 infinite forwards;
+}
+.butterfly:nth-child(40)::after {
+  background-color: #ed008c;
+  animation-delay: 125ms;
+}
+.butterfly:nth-child(40)::before {
+  background-color: #f9a01e;
+  animation-delay: 125ms;
+}
+
+.butterfly:nth-child(41) {
+  left: calc(50% - 42px);
+  animation: 3000ms linear 10174ms scaleUp infinite forwards, 3000ms linear 10174ms flyUp-41 infinite forwards;
+}
+.butterfly:nth-child(41)::after {
+  background-color: #ed008c;
+  animation-delay: 633ms;
+}
+.butterfly:nth-child(41)::before {
+  background-color: #c4d72d;
+  animation-delay: 633ms;
+}
+
+.butterfly:nth-child(42) {
+  left: calc(50% - 46px);
+  animation: 3000ms linear 1590ms scaleUp infinite forwards, 3000ms linear 1590ms flyUp-42 infinite forwards;
+}
+.butterfly:nth-child(42)::after {
+  background-color: #ed008c;
+  animation-delay: 914ms;
+}
+.butterfly:nth-child(42)::before {
+  background-color: #0154a4;
+  animation-delay: 914ms;
+}
+
+.butterfly:nth-child(43) {
+  left: calc(50% - -96px);
+  animation: 3000ms linear 5370ms scaleUp infinite forwards, 3000ms linear 5370ms flyUp-43 infinite forwards;
+}
+.butterfly:nth-child(43)::after {
+  background-color: #0154a4;
+  animation-delay: 130ms;
+}
+.butterfly:nth-child(43)::before {
+  background-color: #a2238e;
+  animation-delay: 130ms;
+}
+
+.butterfly:nth-child(44) {
+  left: calc(50% - 38px);
+  animation: 3000ms linear 10881ms scaleUp infinite forwards, 3000ms linear 10881ms flyUp-44 infinite forwards;
+}
+.butterfly:nth-child(44)::after {
+  background-color: #0083cb;
+  animation-delay: 897ms;
+}
+.butterfly:nth-child(44)::before {
+  background-color: #0154a4;
+  animation-delay: 897ms;
+}
+
+.butterfly:nth-child(45) {
+  left: calc(50% - 47px);
+  animation: 3000ms linear 1160ms scaleUp infinite forwards, 3000ms linear 1160ms flyUp-45 infinite forwards;
+}
+.butterfly:nth-child(45)::after {
+  background-color: #c4d72d;
+  animation-delay: 802ms;
+}
+.butterfly:nth-child(45)::before {
+  background-color: #f9a01e;
+  animation-delay: 802ms;
+}
+
+.butterfly:nth-child(46) {
+  left: calc(50% - -41px);
+  animation: 3000ms linear 4744ms scaleUp infinite forwards, 3000ms linear 4744ms flyUp-46 infinite forwards;
+}
+.butterfly:nth-child(46)::after {
+  background-color: #f9a01e;
+  animation-delay: 846ms;
+}
+.butterfly:nth-child(46)::before {
+  background-color: #a2238e;
+  animation-delay: 846ms;
+}
+
+.butterfly:nth-child(47) {
+  left: calc(50% - -26px);
+  animation: 3000ms linear 5857ms scaleUp infinite forwards, 3000ms linear 5857ms flyUp-47 infinite forwards;
+}
+.butterfly:nth-child(47)::after {
+  background-color: #0154a4;
+  animation-delay: 4ms;
+}
+.butterfly:nth-child(47)::before {
+  background-color: #a2238e;
+  animation-delay: 4ms;
+}
+
+.butterfly:nth-child(48) {
+  left: calc(50% - 42px);
+  animation: 3000ms linear 1079ms scaleUp infinite forwards, 3000ms linear 1079ms flyUp-48 infinite forwards;
+}
+.butterfly:nth-child(48)::after {
+  background-color: #c4d72d;
+  animation-delay: 580ms;
+}
+.butterfly:nth-child(48)::before {
+  background-color: #f8ee2c;
+  animation-delay: 580ms;
+}
+
+.butterfly:nth-child(49) {
+  left: calc(50% - -43px);
+  animation: 3000ms linear 6007ms scaleUp infinite forwards, 3000ms linear 6007ms flyUp-49 infinite forwards;
+}
+.butterfly:nth-child(49)::after {
+  background-color: #a2238e;
+  animation-delay: 536ms;
+}
+.butterfly:nth-child(49)::before {
+  background-color: #f9a01e;
+  animation-delay: 536ms;
+}
+
+.butterfly:nth-child(50) {
+  left: calc(50% - 4px);
+  animation: 3000ms linear 5583ms scaleUp infinite forwards, 3000ms linear 5583ms flyUp-50 infinite forwards;
+}
+.butterfly:nth-child(50)::after {
+  background-color: #0083cb;
+  animation-delay: 414ms;
+}
+.butterfly:nth-child(50)::before {
+  background-color: #a2238e;
+  animation-delay: 414ms;
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes flyUp-1 {
+  100% {
+    top: -30%;
+    left: 52%;
+  }
+}
+@keyframes flyUp-2 {
+  100% {
+    top: -30%;
+    left: 59%;
+  }
+}
+@keyframes flyUp-3 {
+  100% {
+    top: -30%;
+    left: 79%;
+  }
+}
+@keyframes flyUp-4 {
+  100% {
+    top: -30%;
+    left: 67%;
+  }
+}
+@keyframes flyUp-5 {
+  100% {
+    top: -30%;
+    left: 42%;
+  }
+}
+@keyframes flyUp-6 {
+  100% {
+    top: -30%;
+    left: 31%;
+  }
+}
+@keyframes flyUp-7 {
+  100% {
+    top: -30%;
+    left: 55%;
+  }
+}
+@keyframes flyUp-8 {
+  100% {
+    top: -30%;
+    left: 13%;
+  }
+}
+@keyframes flyUp-9 {
+  100% {
+    top: -30%;
+    left: 72%;
+  }
+}
+@keyframes flyUp-10 {
+  100% {
+    top: -30%;
+    left: 45%;
+  }
+}
+@keyframes flyUp-11 {
+  100% {
+    top: -30%;
+    left: 43%;
+  }
+}
+@keyframes flyUp-12 {
+  100% {
+    top: -30%;
+    left: 16%;
+  }
+}
+@keyframes flyUp-13 {
+  100% {
+    top: -30%;
+    left: 41%;
+  }
+}
+@keyframes flyUp-14 {
+  100% {
+    top: -30%;
+    left: 26%;
+  }
+}
+@keyframes flyUp-15 {
+  100% {
+    top: -30%;
+    left: 79%;
+  }
+}
+@keyframes flyUp-16 {
+  100% {
+    top: -30%;
+    left: 13%;
+  }
+}
+@keyframes flyUp-17 {
+  100% {
+    top: -30%;
+    left: 25%;
+  }
+}
+@keyframes flyUp-18 {
+  100% {
+    top: -30%;
+    left: 57%;
+  }
+}
+@keyframes flyUp-19 {
+  100% {
+    top: -30%;
+    left: 19%;
+  }
+}
+@keyframes flyUp-20 {
+  100% {
+    top: -30%;
+    left: 21%;
+  }
+}
+@keyframes flyUp-21 {
+  100% {
+    top: -30%;
+    left: 39%;
+  }
+}
+@keyframes flyUp-22 {
+  100% {
+    top: -30%;
+    left: 24%;
+  }
+}
+@keyframes flyUp-23 {
+  100% {
+    top: -30%;
+    left: 46%;
+  }
+}
+@keyframes flyUp-24 {
+  100% {
+    top: -30%;
+    left: 76%;
+  }
+}
+@keyframes flyUp-25 {
+  100% {
+    top: -30%;
+    left: 30%;
+  }
+}
+@keyframes flyUp-26 {
+  100% {
+    top: -30%;
+    left: 15%;
+  }
+}
+@keyframes flyUp-27 {
+  100% {
+    top: -30%;
+    left: 53%;
+  }
+}
+@keyframes flyUp-28 {
+  100% {
+    top: -30%;
+    left: 27%;
+  }
+}
+@keyframes flyUp-29 {
+  100% {
+    top: -30%;
+    left: 61%;
+  }
+}
+@keyframes flyUp-30 {
+  100% {
+    top: -30%;
+    left: 59%;
+  }
+}
+@keyframes flyUp-31 {
+  100% {
+    top: -30%;
+    left: 43%;
+  }
+}
+@keyframes flyUp-32 {
+  100% {
+    top: -30%;
+    left: 45%;
+  }
+}
+@keyframes flyUp-33 {
+  100% {
+    top: -30%;
+    left: 14%;
+  }
+}
+@keyframes flyUp-34 {
+  100% {
+    top: -30%;
+    left: 31%;
+  }
+}
+@keyframes flyUp-35 {
+  100% {
+    top: -30%;
+    left: 19%;
+  }
+}
+@keyframes flyUp-36 {
+  100% {
+    top: -30%;
+    left: 55%;
+  }
+}
+@keyframes flyUp-37 {
+  100% {
+    top: -30%;
+    left: 22%;
+  }
+}
+@keyframes flyUp-38 {
+  100% {
+    top: -30%;
+    left: 31%;
+  }
+}
+@keyframes flyUp-39 {
+  100% {
+    top: -30%;
+    left: 67%;
+  }
+}
+@keyframes flyUp-40 {
+  100% {
+    top: -30%;
+    left: 14%;
+  }
+}
+@keyframes flyUp-41 {
+  100% {
+    top: -30%;
+    left: 36%;
+  }
+}
+@keyframes flyUp-42 {
+  100% {
+    top: -30%;
+    left: 19%;
+  }
+}
+@keyframes flyUp-43 {
+  100% {
+    top: -30%;
+    left: 78%;
+  }
+}
+@keyframes flyUp-44 {
+  100% {
+    top: -30%;
+    left: 75%;
+  }
+}
+@keyframes flyUp-45 {
+  100% {
+    top: -30%;
+    left: 12%;
+  }
+}
+@keyframes flyUp-46 {
+  100% {
+    top: -30%;
+    left: 35%;
+  }
+}
+@keyframes flyUp-47 {
+  100% {
+    top: -30%;
+    left: 75%;
+  }
+}
+@keyframes flyUp-48 {
+  100% {
+    top: -30%;
+    left: 66%;
+  }
+}
+@keyframes flyUp-49 {
+  100% {
+    top: -30%;
+    left: 79%;
+  }
+}
+@keyframes flyUp-50 {
+  100% {
+    top: -30%;
+    left: 29%;
+  }
+}
+@keyframes flapWingLeft {
+  0% {
+    transform: skewX(30deg) scaleX(0.2);
+  }
+  100% {
+    transform: skewX(30deg) scaleX(1);
+  }
+}
+@keyframes flapWingRight {
+  0% {
+    transform: skewX(-30deg) scaleX(0.2);
+  }
+  100% {
+    transform: skewX(-30deg) scaleX(1);
+  }
+}

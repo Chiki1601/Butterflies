@@ -1,0 +1,1 @@
+/* JavaScript is a tool of evil :-) */
